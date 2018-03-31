@@ -1,0 +1,108 @@
+.description {
+	background: #ffffff;
+	padding: 0 15px;
+	position: relative;
+	
+
+	&:before{
+		content: "";
+		position: absolute;
+		background: linear-gradient(135deg, transparent 0%, transparent 50%, @colar-pink 50%, @colar-pink 100%);
+		background-size: cover;
+		bottom: 0px;
+		right: 0px;
+		height: 568px;
+		width: 568px;
+		z-index: 3;
+	}
+
+	&__container {
+		max-width: 1140px;
+		margin: 0 auto;
+		padding-top: 170px;
+		padding-bottom: 134px;
+	}
+
+	&__subtitle {
+		text-transform: uppercase;
+		color: @bittersweet;
+		letter-spacing: 2px;
+		margin-bottom: 2px;
+	}
+
+	&__title {
+		font-size: 40px;
+		line-height: 50px;
+		width: 540px;
+		margin: 0;
+		margin-bottom: 41px;
+	}
+
+	&__title span {
+		color: @bittersweet;
+		letter-spacing: 2px;
+	}
+
+	&__text1,
+	&__text2 {
+		width: 570px;
+		margin-bottom: 27px;
+	}
+
+	&__img {
+		position: absolute;
+		background: #ffffff url("../img/woods.jpg");
+		background-size: cover;
+		top: 0px;
+		right: 0px;
+		height: 100%;
+		width: 568px;
+	}
+
+}
+
+@media @tablet-widths{ 
+.description {
+	background: #ffffff;
+	padding: 0 15px;
+	position: relative;
+	
+	&:before{
+		width: 40vw;
+		height: 40vw;
+	}
+
+	&__container {
+		max-width: 1140px;
+		margin: 0 auto;
+		padding-top: 140px;
+		padding-bottom: 114px;
+	}
+
+	&__img {
+		display: none;
+	}
+
+
+}
+}
+
+@media @mobile-widths {
+.description {
+
+	&:before{
+		width: 30vw;
+		height: 30vw;
+	}
+
+	&__title {
+		width: auto;
+	}
+
+	&__text1,
+	&__text2 {
+		width: auto;
+		margin-bottom: 27px;
+	}
+}
+}
