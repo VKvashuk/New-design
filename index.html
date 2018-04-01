@@ -6,7 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <link href="https://fonts.googleapis.com/css?family=Exo:100,400,400i,500|Lato" rel="stylesheet">
-
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="css/animate.css">
   <link rel="stylesheet" href="css/style.css">
 
 </head>
@@ -31,17 +32,17 @@
             <p class="awesome__subtitle">NEW FEATURES</p>
             <h2 class="awesome__title">Some awesone features</h2>
             <div class="awesome__items">
-                <div class="awesome__item">
+                <div class="awesome__item zoomIn">
                     <img src="img/picture1.png" alt="awesome picture1">
                     <p class="awesome__item-title">Some awesone features</p>
                     <p class="awesome__item-text">Donec sed odio dui. Aenean lacinia bibendum nulla sed consectetur. Nulla vitae elit libero, a pharetra augue.</p>
                 </div>
-                <div class="awesome__item">
+                <div class="awesome__item zoomIn">
                     <img src="img/airplane.png" alt="awesome picture2">
                     <p class="awesome__item-title">Some awesone features</p>
                     <p class="awesome__item-text">Donec sed odio dui. Aenean lacinia bibendum nulla sed consectetur. Nulla vitae elit libero, a pharetra augue.</p>
                 </div>
-                <div class="awesome__item">
+                <div class="awesome__item zoomIn">
                     <img src="img/bulb.png" alt="awesome picture3">
                     <p class="awesome__item-title">Some awesone features</p>
                     <p class="awesome__item-text">Donec sed odio dui. Aenean lacinia bibendum nulla sed consectetur. Nulla vitae elit libero, a pharetra augue.</p>
@@ -65,19 +66,19 @@
     <section class="clients">
         <div class="clients__container">
             <div class="clients__autors">
-                <div class="clients__autor">
+                <div class="clients__autor fadeInLeft">
                     <img src="img/man.jpg" alt="client">
                     <p class="clients__name">Jonathon Doe</p>
                     <p class="clients__work">Co Founder</p>
                     <p class="clients__text">“Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec id gravida at eget metus. Etiasem malesuada magn”</p>
                 </div>
-                <div class="clients__autor">
+                <div class="clients__autor fadeInLeft">
                     <img src="img/man.jpg" alt="client">
                     <p class="clients__name">Jonathon Doe</p>
                     <p class="clients__work">Co Founder</p>
                     <p class="clients__text">“Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec id gravida at eget metus. Etiasem malesuada magn”</p>
                 </div>
-                <div class="clients__autor">
+                <div class="clients__autor fadeInLeft">
                     <img src="img/man.jpg" alt="client">
                     <p class="clients__name">Jonathon Doe</p>
                     <p class="clients__work">Co Founder</p>
@@ -85,11 +86,11 @@
                 </div>
             </div>
             <div class="clients__logos">
-                <img class="clients__logo1" src="img/logo1.png" width="130px" height="65px" alt="logo1">
-                <img class="clients__logo2" src="img/logo4.png" width="130px" height="66px" alt="logo2">
-                <img class="clients__logo3" src="img/logo5.png" width="98px" height="85px" alt="logo3">
-                <img class="clients__logo4" src="img/logo7.png" width="95px" height="61px" alt="logo4">
-                <img class="clients__logo5" src="img/logo8.png" width="120px" height="54px" alt="logo5">
+                <img class="clients__logo1 slideInUp" src="img/logo1.png" width="130px" height="65px" alt="logo1">
+                <img class="clients__logo2 slideInUp" src="img/logo4.png" width="130px" height="66px" alt="logo2">
+                <img class="clients__logo3 slideInUp" src="img/logo5.png" width="98px" height="85px" alt="logo3">
+                <img class="clients__logo4 slideInUp" src="img/logo7.png" width="95px" height="61px" alt="logo4">
+                <img class="clients__logo5 slideInUp" src="img/logo8.png" width="120px" height="54px" alt="logo5">
             </div>
         </div>
     </section>
@@ -152,5 +153,54 @@
             </div>
         </div> 
     </footer> 
+
+    <script src="js/wow.min.js"></script>
+    <script>
+               
+    var wow = new WOW(
+      {
+        boxClass:     'clients__autor',      // animated element css class (default is wow)
+        animateClass: 'animated', // animation css class (default is animated)
+        offset:       200,          // distance to the element when triggering the animation (default is 0)
+        mobile:       true,       // trigger animations on mobile devices (default is true)
+        live:         true,       // act on asynchronously loaded content (default is true)
+        callback:     function(box) {
+          // the callback is fired every time an animation is started
+          // the argument that is passed in is the DOM node being animated
+        },
+        scrollContainer: null // optional scroll container selector, otherwise use window
+      }
+    );
+    wow.init();
+
+    var wow2 = new WOW(
+      {
+        boxClass:     'awesome__item',  
+        animateClass: 'animated', 
+        offset:       200,         
+        mobile:       true,      
+        live:         true,     
+        callback:     function(box) {
+        },
+        scrollContainer: null 
+      }
+    );
+    wow2.init();
+
+    var wow3 = new WOW(
+      {
+        boxClass:     'clients__logos img',   
+        animateClass: 'animated', 
+        offset:       0,    
+        mobile:       true,     
+        live:         true,     
+        callback:     function(box) {
+        }
+      }
+    );
+    wow3.init();
+
+
+    </script>
 </body>
 </html>

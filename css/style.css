@@ -18,6 +18,94 @@ li {
 a {
   text-decoration: none;
 }
+@-webkit-keyframes scale {
+  from {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  50% {
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+  }
+  to {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+@keyframes scale {
+  from {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  50% {
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+  }
+  to {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+@-webkit-keyframes pinBeforeWave {
+  from {
+    width: 59px;
+    height: 59px;
+    margin-left: -31px;
+    margin-top: -31px;
+  }
+  to {
+    width: 100px;
+    height: 100px;
+    margin-left: -49px;
+    margin-top: -49px;
+    opacity: 0;
+  }
+}
+@keyframes pinBeforeWave {
+  from {
+    width: 59px;
+    height: 59px;
+    margin-left: -31px;
+    margin-top: -31px;
+  }
+  to {
+    width: 100px;
+    height: 100px;
+    margin-left: -49px;
+    margin-top: -49px;
+    opacity: 0;
+  }
+}
+@-webkit-keyframes pinAfterWave {
+  from {
+    width: 59px;
+    height: 59px;
+    margin-left: -31px;
+    margin-top: -31px;
+  }
+  to {
+    width: 80px;
+    height: 80px;
+    margin-left: -39px;
+    margin-top: -39px;
+    opacity: 0;
+  }
+}
+@keyframes pinAfterWave {
+  from {
+    width: 59px;
+    height: 59px;
+    margin-left: -31px;
+    margin-top: -31px;
+  }
+  to {
+    width: 80px;
+    height: 80px;
+    margin-left: -39px;
+    margin-top: -39px;
+    opacity: 0;
+  }
+}
 .header {
   background: #ffffff url("../img/bg-header.jpg");
   background-size: cover;
@@ -45,22 +133,60 @@ a {
   margin: 0 auto;
   margin-top: 41px;
   margin-bottom: 39px;
+  position: relative;
+  z-index: 1;
+  -webkit-animation: scale 2s ease-in-out infinite;
+          animation: scale 2s ease-in-out infinite;
+}
+.header__btn-play:before,
+.header__btn-play:after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  display: block;
+  border-radius: 50%;
+  border: 1px solid #323969;
+  width: 57px;
+  height: 57px;
+  margin-left: -30px;
+  margin-top: -30px;
+}
+.header__btn-play:before {
+  -webkit-animation: pinBeforeWave 4s ease-out infinite;
+          animation: pinBeforeWave 4s ease-out infinite;
+}
+.header__btn-play:after {
+  -webkit-animation: pinAfterWave 4s ease-out infinite;
+          animation: pinAfterWave 4s ease-out infinite;
+}
+.header__btn-play:hover:before,
+.header__btn-play:hover:after {
+  -webkit-animation-play-state: paused;
+          animation-play-state: paused;
 }
 .header__btn-try {
   display: block;
   width: 190px;
-  padding: 18px;
+  padding: 17px;
   border-radius: 3px;
   font-weight: 400;
   color: #ffffff;
   background: #ff6d6d;
   text-decoration: none;
   border: none;
+  border: 1px solid #ff6d6d;
   outline: none;
   cursor: pointer;
   margin: 0 auto;
   text-transform: uppercase;
   letter-spacing: 2px;
+  transition: all 0.5s ease-in-out;
+}
+.header__btn-try:hover {
+  border: 1px solid #ff6d6d;
+  color: #ff6d6d;
+  background: #ffffff;
 }
 .header__text {
   font-size: 14px;
@@ -612,7 +738,7 @@ a {
 .signin-up__btn {
   display: block;
   width: 260px;
-  padding: 15px;
+  padding: 14px;
   border-radius: 3px;
   font-size: 16px;
   font-weight: 400;
@@ -621,12 +747,19 @@ a {
   line-height: 20px;
   text-decoration: none;
   border: none;
+  border: 1px solid #ff6d6d;
   outline: none;
   cursor: pointer;
   text-transform: uppercase;
   letter-spacing: 2px;
   margin-bottom: 10px;
   position: relative;
+  transition: all 0.5s ease-in-out;
+}
+.signin-up__btn:hover {
+  border: 1px solid #ff6d6d;
+  color: #ff6d6d;
+  background: #ffffff;
 }
 .signin-up__btn:before {
   content: "";
@@ -637,10 +770,13 @@ a {
   height: 41px;
   top: -57px;
   left: 0px;
+  cursor: default;
+  pointer-events: none;
 }
 .signin-up__btn:after {
   content: "30 days free trial for all.";
   position: absolute;
+  color: #ffffff;
   font-weight: 400;
   text-transform: none;
   letter-spacing: 1px;
@@ -649,6 +785,9 @@ a {
   height: 20px;
   top: -59px;
   left: 17px;
+  cursor: default;
+  pointer-events: none;
+  transition: all 0s ease-in-out;
 }
 @media (max-width: 1169px) {
   .signin-up__form {
@@ -776,6 +915,7 @@ a {
   height: 22px;
   top: 13px;
   left: 13px;
+  transition: all 0.5s ease-in-out;
 }
 .footer__btn:hover:before {
   -webkit-transform: scale(1.15);
@@ -792,10 +932,14 @@ a {
   vertical-align: bottom;
   -webkit-filter: grayscale(1);
           filter: grayscale(1);
+  transition: all 0.5s ease-in-out;
 }
 .footer__social-wrapper a:hover {
   -webkit-filter: grayscale(0);
           filter: grayscale(0);
+  -webkit-transform: scale(1.2);
+      -ms-transform: scale(1.2);
+          transform: scale(1.2);
 }
 .footer__social-wrapper .footer__social-dribbble {
   background-position: -53px -27px;

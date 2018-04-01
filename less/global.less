@@ -23,3 +23,49 @@ li {
 a {
   text-decoration: none;
 }
+
+@keyframes scale {
+    from {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+
+    to {
+        transform: scale(1);
+    }
+}
+
+@keyframes pinBeforeWave {
+    from {
+        width: 59px;
+        height: 59px;
+        margin-left: -31px;
+        margin-top: -31px;
+    }
+    to {
+        width: 100px;
+        height: 100px;
+        margin-left: -49px;
+        margin-top: -49px;
+        opacity: 0;
+    }
+}
+ 
+@keyframes pinAfterWave {
+    from {
+        width: 59px;
+        height: 59px;
+        margin-left: -31px;
+        margin-top: -31px;
+    }
+    to {
+        width: 80px;
+        height: 80px;
+        margin-left: -39px;
+        margin-top: -39px;
+        opacity: 0;
+    }
+}
