@@ -78,19 +78,10 @@ a {
   -webkit-animation: scale 2s ease-in-out infinite;
           animation: scale 2s ease-in-out infinite;
 }
-.header__btn-play:before,
-.header__btn-play:after {
-  content: '';
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  display: block;
-  border-radius: 50%;
-  border: 1px solid #323969;
-  width: 57px;
-  height: 57px;
-  margin-left: -30px;
-  margin-top: -30px;
+
+.header__btn-play:hover {
+  -webkit-animation-play-state: paused;
+          animation-play-state: paused;
 }
 .header__btn-try {
   display: block;
