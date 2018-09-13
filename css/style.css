@@ -46,66 +46,6 @@ a {
             transform: scale(1);
   }
 }
-@-webkit-keyframes pinBeforeWave {
-  from {
-    width: 59px;
-    height: 59px;
-    margin-left: -31px;
-    margin-top: -31px;
-  }
-  to {
-    width: 100px;
-    height: 100px;
-    margin-left: -49px;
-    margin-top: -49px;
-    opacity: 0;
-  }
-}
-@keyframes pinBeforeWave {
-  from {
-    width: 59px;
-    height: 59px;
-    margin-left: -31px;
-    margin-top: -31px;
-  }
-  to {
-    width: 100px;
-    height: 100px;
-    margin-left: -49px;
-    margin-top: -49px;
-    opacity: 0;
-  }
-}
-@-webkit-keyframes pinAfterWave {
-  from {
-    width: 59px;
-    height: 59px;
-    margin-left: -31px;
-    margin-top: -31px;
-  }
-  to {
-    width: 80px;
-    height: 80px;
-    margin-left: -39px;
-    margin-top: -39px;
-    opacity: 0;
-  }
-}
-@keyframes pinAfterWave {
-  from {
-    width: 59px;
-    height: 59px;
-    margin-left: -31px;
-    margin-top: -31px;
-  }
-  to {
-    width: 80px;
-    height: 80px;
-    margin-left: -39px;
-    margin-top: -39px;
-    opacity: 0;
-  }
-}
 .header {
   background: #ffffff url("../img/bg-header.jpg");
   background-size: cover;
@@ -151,19 +91,6 @@ a {
   height: 57px;
   margin-left: -30px;
   margin-top: -30px;
-}
-.header__btn-play:before {
-  -webkit-animation: pinBeforeWave 4s ease-out infinite;
-          animation: pinBeforeWave 4s ease-out infinite;
-}
-.header__btn-play:after {
-  -webkit-animation: pinAfterWave 4s ease-out infinite;
-          animation: pinAfterWave 4s ease-out infinite;
-}
-.header__btn-play:hover:before,
-.header__btn-play:hover:after {
-  -webkit-animation-play-state: paused;
-          animation-play-state: paused;
 }
 .header__btn-try {
   display: block;
